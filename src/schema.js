@@ -25,7 +25,8 @@ type Track {
     title: String!
     author: Author!
     thumbnail: String
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
+    durationInSeconds: Int
     modulesCount: Int
     description: String
     numberOfViews: Int
@@ -36,7 +37,10 @@ type Track {
 type Module {
     id: ID!
     title: String!
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
+    durationInSeconds: Int
+    content: String
+    videoUrl: String
 }
 
 "Author of a complete track"
